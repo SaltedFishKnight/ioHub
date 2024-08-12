@@ -12,7 +12,6 @@ import com.iohao.game.action.skeleton.protocol.wrapper.WrapperKit;
 import com.iohao.game.bolt.broker.client.kit.ExternalCommunicationKit;
 import com.iohao.game.bolt.broker.client.kit.UserIdSettingKit;
 import com.iohao.game.bolt.broker.core.client.BrokerClientHelper;
-import lombok.extern.slf4j.Slf4j;
 import org.king.iohub.common.protobuf.lobby.LoginResponse;
 import org.king.iohub.common.protobuf.lobby.RemoteUserInfo;
 import org.king.iohub.common.route.LobbyCmd;
@@ -21,7 +20,6 @@ import org.king.iohub.server.logic.lobby.internal.UserStateType;
 import org.king.iohub.server.logic.lobby.singleton.AutoMatchProcessor;
 import org.king.iohub.server.logic.lobby.singleton.UserStateHolder;
 
-@Slf4j
 @ActionController(LobbyCmd.cmd)
 public class LobbyAction {
 

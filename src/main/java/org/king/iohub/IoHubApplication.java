@@ -73,5 +73,15 @@ public class IoHubApplication {
                 System.lineSeparator(),
                 externalPort
         );
+        log.info("IoHub Connection Information:" +
+                        "{}" +
+                        "\tExternal Server Address: {}" +
+                        "{}" +
+                        "\tExternal Server Port: {}",
+                System.lineSeparator(),
+                NetworkKit.LOCAL_IP,
+                System.lineSeparator(),
+                externalPort
+        );
     }
 }

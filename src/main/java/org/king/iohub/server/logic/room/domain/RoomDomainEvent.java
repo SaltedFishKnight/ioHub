@@ -27,6 +27,7 @@ public class RoomDomainEvent {
         domainEventContext = new DomainEventContext(contextParam);
         boolean startup = domainEventContext.startup();
         log.info("房间逻辑服的领域事件启动状态：{}", startup);
+        log.info("The state of the domain event initiation for the RoomLogicServer: {}", startup);
 
     }
 

@@ -28,6 +28,20 @@ public class IoHubUserHook implements UserHook {
                 System.lineSeparator(),
                 userSession.getState()
         );
+        log.info("User login successfully" +
+                        "{}" +
+                        "\tUser ID: [{}]" +
+                        "{}" +
+                        "\tUser IP: {}" +
+                        "{}" +
+                        "\tUser State: {}",
+                System.lineSeparator(),
+                userSession.getUserId(),
+                System.lineSeparator(),
+                userSession.getIp(),
+                System.lineSeparator(),
+                userSession.getState()
+        );
     }
 
     @Override
@@ -38,6 +52,20 @@ public class IoHubUserHook implements UserHook {
         invokeModuleContext.invokeModuleVoidMessage(logoutCmdInfo, WrapperKit.of(userSession.getUserId()));
 
         log.info("用户注销成功" +
+                        "{}" +
+                        "\tUser ID: [{}]" +
+                        "{}" +
+                        "\tUser IP: {}" +
+                        "{}" +
+                        "\tUser State: {}",
+                System.lineSeparator(),
+                userSession.getUserId(),
+                System.lineSeparator(),
+                userSession.getIp(),
+                System.lineSeparator(),
+                userSession.getState()
+        );
+        log.info("User logout successfully" +
                         "{}" +
                         "\t用户ID：[{}]" +
                         "{}" +

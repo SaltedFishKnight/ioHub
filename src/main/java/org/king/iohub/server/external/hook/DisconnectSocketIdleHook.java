@@ -20,13 +20,27 @@ public class DisconnectSocketIdleHook implements SocketIdleHook {
         InvokeModuleContext invokeModuleContext = BrokerClientHelper.getInvokeModuleContext();
         invokeModuleContext.invokeModuleMessage(heartbeatLostCmdInfo, WrapperKit.of(userSession.getUserId()));
 
-        log.info("通知框架关闭以下用户的连接" +
+        log.info("通知框架，关闭以下用户的连接：" +
                         "{}" +
                         "\t用户ID：[{}]" +
                         "{}" +
                         "\t用户IP地址：{}" +
                         "{}" +
                         "\t用户状态：{}",
+                System.lineSeparator(),
+                userSession.getUserId(),
+                System.lineSeparator(),
+                userSession.getIp(),
+                System.lineSeparator(),
+                userSession.getState()
+        );
+        log.info("Notify the skeleton to close the connection for the following users:" +
+                        "{}" +
+                        "\tUser ID: [{}]" +
+                        "{}" +
+                        "\tUser IP: {}" +
+                        "{}" +
+                        "\tUser State: {}",
                 System.lineSeparator(),
                 userSession.getUserId(),
                 System.lineSeparator(),
