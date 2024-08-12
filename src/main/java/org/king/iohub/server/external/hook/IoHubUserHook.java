@@ -28,7 +28,7 @@ public class IoHubUserHook implements UserHook {
                 System.lineSeparator(),
                 userSession.getState()
         );
-        log.info("User login successfully" +
+        log.info("User logged in successfully" +
                         "{}" +
                         "\tUser ID: [{}]" +
                         "{}" +
@@ -53,11 +53,11 @@ public class IoHubUserHook implements UserHook {
 
         log.info("用户注销成功" +
                         "{}" +
-                        "\tUser ID: [{}]" +
+                        "\t用户ID：[{}]" +
                         "{}" +
-                        "\tUser IP: {}" +
+                        "\t用户IP地址：{}" +
                         "{}" +
-                        "\tUser State: {}",
+                        "\t用户状态：{}",
                 System.lineSeparator(),
                 userSession.getUserId(),
                 System.lineSeparator(),
@@ -65,13 +65,13 @@ public class IoHubUserHook implements UserHook {
                 System.lineSeparator(),
                 userSession.getState()
         );
-        log.info("User logout successfully" +
+        log.info("User logged out successfully" +
                         "{}" +
-                        "\t用户ID：[{}]" +
+                        "\tUser ID: [{}]" +
                         "{}" +
-                        "\t用户IP地址：{}" +
+                        "\tUser IP: {}" +
                         "{}" +
-                        "\t用户状态：{}",
+                        "\tUser State: {}",
                 System.lineSeparator(),
                 userSession.getUserId(),
                 System.lineSeparator(),
