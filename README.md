@@ -17,7 +17,7 @@
 
 # ioHub Server
 1. ioHub is a lightweight game server independent of the game program
-2. Download the ZIP, unzip it and rename the folder to ioHub, put the ioHub folder under the mods folder and use ioHub\run\launch.bat to start the server
+2. Download the ZIP. Unzip it and rename the folder to ioHub. Put the ioHub folder under the mods folder and use ioHub\run\launch.bat to start the server
 3. Make the text output from the console appear in color
     * The Windows default CMD does not support ANSI Escape Sequences
     * It is recommended to install Windows Terminal from Microsoft Store and set Windows Terminal as default startup
