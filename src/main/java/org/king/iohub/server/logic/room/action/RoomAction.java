@@ -10,7 +10,6 @@ import com.iohao.game.bolt.broker.core.client.BrokerClientHelper;
 import org.king.iohub.common.protobuf.lobby.AutoMatchResult;
 import org.king.iohub.common.protobuf.lobby.RemoteUserInfo;
 import org.king.iohub.common.protobuf.room.ActionWithId;
-import org.king.iohub.common.protobuf.room.ShipAction;
 import org.king.iohub.common.route.RoomCmd;
 import org.king.iohub.server.logic.room.combat.CombatRoom;
 import org.king.iohub.server.logic.room.combat.CombatRoomService;
@@ -28,29 +27,6 @@ public class RoomAction {
         new ReadyEo(userId).send();
     }
 
-    @ActionMethod(RoomCmd.exchangeShipAction)
-    public ShipAction exchangeShipAction(ShipAction producerShipAction, FlowContext flowContext) {
-        long userId = flowContext.getUserId();
-        CombatRoomService combatRoomService = CombatRoomService.INSTANCE;
-        CombatRoom combatRoom = combatRoomService.getRoomByUserId(userId);
-        if (combatRoom == null) {
-            return new ShipAction();
-        }
-        ShipPlayer shipPlayer = combatRoom.getPlayerById(userId);
-
-        try {
-            shipPlayer.producerQueue.put(producerShipAction);
-        } catch (Exception e) {
-            throw new RuntimeException("生产 ShipAction 失败", e);
-        }
-
-        try {
-            return shipPlayer.consumerQueue.take();
-        } catch (Exception e) {
-            throw new RuntimeException("消费 ShipAction 失败", e);
-        }
-    }
-
     @ActionMethod(RoomCmd.createRoomByAutoMatch)
     public boolean createRoomByAutoMatch(AutoMatchResult autoMatchResult) {
 
@@ -63,8 +39,6 @@ public class RoomAction {
         ShipPlayer shipPlayerTwo = new ShipPlayer();
         shipPlayerOne.setUserId(remoteUserOneInfo.userId);
         shipPlayerTwo.setUserId(remoteUserTwoInfo.userId);
-        shipPlayerOne.consumerQueue = shipPlayerTwo.producerQueue;
-        shipPlayerTwo.consumerQueue = shipPlayerOne.producerQueue;
 
         // 获取房间服务
         CombatRoomService combatRoomService = CombatRoomService.INSTANCE;

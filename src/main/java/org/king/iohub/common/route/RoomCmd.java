@@ -16,11 +16,6 @@ public interface RoomCmd {
     int ready = 0;
 
     /**
-     * 交换一帧之内，飞船的所有行为
-     */
-    int exchangeShipAction = 1;
-
-    /**
      * 上传一帧之内，飞船的所有行为
      */
     int uploadShipAction = 8;
