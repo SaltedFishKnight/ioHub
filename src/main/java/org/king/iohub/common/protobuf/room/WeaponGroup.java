@@ -5,7 +5,7 @@ import com.baidu.bjf.remoting.protobuf.annotation.ProtobufClass;
 import java.util.List;
 
 @ProtobufClass
-public class WeaponGroupState {
+public class WeaponGroup {
 
     public int curGroupIndex;
 
