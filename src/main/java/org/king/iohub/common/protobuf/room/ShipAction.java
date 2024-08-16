@@ -17,4 +17,6 @@ public class ShipAction {
 
     public boolean isShiftPressed;
 
+    public boolean isOpenedCommandPanel;
+
 }
