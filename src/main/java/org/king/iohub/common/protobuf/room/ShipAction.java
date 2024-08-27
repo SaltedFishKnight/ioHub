@@ -19,4 +19,6 @@ public class ShipAction {
 
     public boolean isOpenedCommandPanel;
 
+    public int frameIndex;
+
 }
