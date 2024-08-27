@@ -9,7 +9,7 @@
     <version>0.0.1</version>
 
     <properties>
-        <ioGame.version>21.13</ioGame.version>
+        <ioGame.version>21.15</ioGame.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
